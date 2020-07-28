@@ -1,0 +1,67 @@
+[
+    {
+        "UserId": 1,
+        "UserName": "Kratika",
+        "ProfileImage": "",
+        "Location": {
+            "Long": 12.2,
+            "Lat": 77.2,
+            "Dist":5,
+            "Area":"Bellandur, Sarjapur"
+        },
+        "IsVerified": true,
+        "ContactNumber": "+91-9591390308",
+        "MedicineList": [
+            {
+                "MedicineName": "Paracetamol",
+                "Count": 20,
+                "ExpiryDate": "30/08/2020"
+            }
+        ]
+    },
+    {
+        "UserId": 2,
+        "UserName": "Ishan",
+        "ProfileImage": "",
+        "Location": {
+            "Long": 12.2,
+            "Lat": 78.2,
+            "Dist":0.6,
+            "Area":"Sarjapur, Bangalore"
+        },
+        "IsVerified": false,
+        "ContactNumber": "+91-8447559779",
+        "MedicineList": [
+            {
+                "MedicineName": "Crocin",
+                "Count": 12,
+                "ExpiryDate": "12/12/2020"
+            },
+            {
+                "MedicineName": "Glucon D",
+                "Count": 12,
+                "ExpiryDate": "12/12/2020"
+            }
+        ]
+    },
+    {
+        "UserId": 3,
+        "UserName": "Chetan",
+        "ProfileImage": "https://reactnative.dev/img/tiny_logo.png",
+        "Location": {
+            "Long": 13.2,
+            "Lat": 79.2,
+            "Dist": 1,
+            "Area":"Indranagar, Sarjapur"
+        },
+        "IsVerified": true,
+        "ContactNumber": "+91-9650939314",
+        "MedicineList": [
+            {
+                "MedicineName": "Eno",
+                "Count": 5,
+                "ExpiryDate": "12/08/2020"
+            }
+        ]
+    }
+]
