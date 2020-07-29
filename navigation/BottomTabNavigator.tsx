@@ -8,6 +8,7 @@ import useColorScheme from "../hooks/useColorScheme";
 import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from "../types";
+import MedicineList from "../components/Donor/MedicineList";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -73,6 +74,7 @@ function TabTwoNavigator() {
         component={TabTwoScreen}
         options={{ headerTitle: "Donor" }}
       />
+      <TabTwoStack.Screen name="MedicineList" component={MedicineList} />
     </TabTwoStack.Navigator>
   );
 }
