@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SearchBar } from "react-native-elements";
 import { Text, View, StyleSheet, Button, TouchableOpacity } from "react-native";
 
-export default function SearchMedicine() {
+export default function SearchMedicine(props: any) {
   const [searchText, setSearchText] = useState("");
 
   return (
@@ -14,6 +14,9 @@ export default function SearchMedicine() {
         value={searchText}
         lightTheme={true}
       />
+       <Button title="Submit" onPress={() => {
+         props.navigation.push("DonorsList")
+      }} />
     </View>
   );
 }

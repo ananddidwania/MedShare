@@ -4,7 +4,7 @@ import { TextInput } from "react-native-gesture-handler";
 import Header from "../Header";
 import { firebaseApp } from "../../config";
 
-export default class AddNewMedicine extends React.Component {
+export default class AddNewMedicine extends React.Component<any> {
   state = {
     medicineName: "",
     expiryDate: "",
@@ -67,6 +67,14 @@ export default class AddNewMedicine extends React.Component {
             color="#841584"
           />
         </View>
+        <Button
+          title={
+            "See Donated medicines"
+          }
+          onPress={() =>
+            this.props.navigation.push("MedicineList")
+          }
+        />
       </View>
     );
   }

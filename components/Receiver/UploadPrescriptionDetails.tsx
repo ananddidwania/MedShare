@@ -10,7 +10,8 @@ import {
 } from "react-native";
 import * as DocumentPicker from "expo-document-picker";
 
-export default function UploadPrescriptionDetails() {
+export default function UploadPrescriptionDetails(props: any) {
+ 
   const [prescription, setPrescription] = useState("");
   const [medicine, setMedicineName] = useState("");
 
@@ -73,7 +74,9 @@ export default function UploadPrescriptionDetails() {
         />
       </TouchableOpacity>
 
-      <Button title="Submit" onPress={() => {}} />
+      <Button title="Submit" onPress={() => {
+         props.navigation.push("SearchMedicine")
+      }} />
     </View>
   );
 }

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, Linking } from "react-native";
 import { ScrollView, FlatList, TouchableOpacity } from "react-native-gesture-handler";
 
 export default function DonorList(props: any) {
-    const donors: Array<any> = props.donors;
+    const donors: Array<any> = require("../../assets/data/donors.json");
     return (
         <ScrollView>
             <View style={styles.container}>

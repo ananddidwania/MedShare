@@ -8,11 +8,13 @@ export type BottomTabParamList = {
   Donor: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
-};
-
-export type TabTwoParamList = {
+export type DonorTab = {
   TabTwoScreen: undefined;
   MedicineList: undefined;
 };
+
+export type ReceiverTab = {
+  UploadPrescriptionDetails: undefined;
+  SearchMedicine: undefined;
+  DonorsList: undefined
+}
