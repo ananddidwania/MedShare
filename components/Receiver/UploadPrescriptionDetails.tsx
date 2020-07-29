@@ -68,7 +68,10 @@ export default function UploadPrescriptionDetails(props: any) {
         </Text>
         <MedicinesList />
 
-        <Button title="Submit" onPress={() => {}} />
+        <Button
+          title="Submit"
+          onPress={() => props.navigation.push("SearchMedicine")}
+        />
       </View>
     </ScrollView>
   );
