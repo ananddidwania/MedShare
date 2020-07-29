@@ -41,15 +41,19 @@ export default class AddNewMedicine extends React.Component<any> {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{width:"40%", flex:1, alignSelf:"flex-end", marginTop: 10, marginBottom:40}}>
-        <Button
-          title={
-            "See Donated medicines"
-          }
-          onPress={() =>
-            this.props.navigation.push("MedicineList")
-          }
-        />
+        <View
+          style={{
+            width: "40%",
+            flex: 1,
+            alignSelf: "flex-end",
+            marginTop: 10,
+            marginBottom: 40,
+          }}
+        >
+          <Button
+            title={"See Donated medicines"}
+            onPress={() => this.props.navigation.push("MedicineList")}
+          />
         </View>
         <TextInput
           style={styles.inputBox}
@@ -76,7 +80,6 @@ export default class AddNewMedicine extends React.Component<any> {
             color="#10847e"
           />
         </View>
-
       </View>
     );
   }
