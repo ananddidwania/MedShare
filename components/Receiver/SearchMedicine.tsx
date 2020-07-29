@@ -14,8 +14,11 @@ export default function SearchMedicine(props: any) {
         value={searchText}
         lightTheme={true}
       />
-       <Button title="Submit" onPress={() => {
+       <Button title="Search" onPress={() => {
          props.navigation.push("DonorsList")
+      }} />
+        <Button title="Upload Prescription" onPress={() => {
+         props.navigation.push("UploadPrescriptionDetails")
       }} />
     </View>
   );

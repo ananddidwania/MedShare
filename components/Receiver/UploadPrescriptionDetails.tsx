@@ -75,7 +75,7 @@ export default function UploadPrescriptionDetails(props: any) {
       </TouchableOpacity>
 
       <Button title="Submit" onPress={() => {
-         props.navigation.push("SearchMedicine")
+         props.navigation.pop()
       }} />
     </View>
   );

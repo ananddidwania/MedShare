@@ -17,8 +17,8 @@ const ReceiverTabNav = createStackNavigator<ReceiverTab>();
 function ReceiverTabNavigator(){
   return (
     <ReceiverTabNav.Navigator>
-      <ReceiverTabNav.Screen name="UploadPrescriptionDetails" component={UploadPrescriptionDetails} />
       <ReceiverTabNav.Screen name="SearchMedicine" component={SearchMedicine} />
+      <ReceiverTabNav.Screen name="UploadPrescriptionDetails" component={UploadPrescriptionDetails} />
       <ReceiverTabNav.Screen name="DonorsList" component={DonorList} />
     </ReceiverTabNav.Navigator>
   )
