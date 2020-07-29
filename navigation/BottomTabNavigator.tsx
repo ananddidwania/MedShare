@@ -17,9 +17,9 @@ const ReceiverTabNav = createStackNavigator<ReceiverTab>();
 function ReceiverTabNavigator(){
   return (
     <ReceiverTabNav.Navigator>
-      <ReceiverTabNav.Screen name="SearchMedicine" component={SearchMedicine} />
-      <ReceiverTabNav.Screen name="UploadPrescriptionDetails" component={UploadPrescriptionDetails} />
-      <ReceiverTabNav.Screen name="DonorsList" component={DonorList} />
+      <ReceiverTabNav.Screen name="SearchMedicine" component={SearchMedicine} options={{headerTitle:"Search for Medicines"}}/>
+      <ReceiverTabNav.Screen name="UploadPrescriptionDetails" component={UploadPrescriptionDetails} options={{headerTitle:"Upload your prescription"}}/>
+      <ReceiverTabNav.Screen name="DonorsList" component={DonorList} options={{headerTitle:"List of Donors"}} />
     </ReceiverTabNav.Navigator>
   )
 }
@@ -29,8 +29,8 @@ const DonorTabNav = createStackNavigator<DonorTab>();
 function DonorTabNavigator() {
   return (
     <DonorTabNav.Navigator>
-      <DonorTabNav.Screen name="TabTwoScreen" component={AddNewMedicine} />
-      <DonorTabNav.Screen name="MedicineList" component={MedicineList} />
+      <DonorTabNav.Screen name="AddMedicine" component={AddNewMedicine} options={{headerTitle:"Add Medicines"}}/>
+      <DonorTabNav.Screen name="MedicineList" component={MedicineList}  options={{headerTitle:"List of added Medicines"}}/>
     </DonorTabNav.Navigator>
   );
 }

@@ -34,7 +34,6 @@ export default class MedicineList extends React.Component {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <Header headerText="Listed medicines to donate" />
           <View>
             {medicinesKeys.length > 0 ? (
               medicinesKeys.map((key: string) => (

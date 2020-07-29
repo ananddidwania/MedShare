@@ -7,7 +7,7 @@
             "Long": 12.2,
             "Lat": 77.2,
             "Dist":5,
-            "Area":"Bellandur, Sarjapur"
+            "Area":"Bellandur, Bangalore"
         },
         "IsVerified": true,
         "ContactNumber": "+91-9591390308",
@@ -52,7 +52,27 @@
             "Long": 13.2,
             "Lat": 79.2,
             "Dist": 1,
-            "Area":"Indranagar, Sarjapur"
+            "Area":"Indranagar, Bangalore"
+        },
+        "IsVerified": true,
+        "ContactNumber": "+91-9650939314",
+        "MedicineList": [
+            {
+                "MedicineName": "Eno",
+                "Count": 5,
+                "ExpiryDate": "12/08/2020"
+            }
+        ]
+    },
+    {
+        "UserId": 4,
+        "UserName": "Anand",
+        "ProfileImage": "https://reactnative.dev/img/tiny_logo.png",
+        "Location": {
+            "Long": 13.2,
+            "Lat": 79.2,
+            "Dist": 1,
+            "Area":"Marathalli, Bangalore"
         },
         "IsVerified": true,
         "ContactNumber": "+91-9650939314",

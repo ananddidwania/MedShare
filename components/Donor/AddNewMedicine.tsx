@@ -41,7 +41,6 @@ export default class AddNewMedicine extends React.Component<any> {
   render() {
     return (
       <View style={styles.container}>
-        <Header headerText="Add Medicine to donate" />
         <TextInput
           style={styles.inputBox}
           placeholder="Name of medicine"
@@ -64,13 +63,14 @@ export default class AddNewMedicine extends React.Component<any> {
           <Button
             onPress={() => this.SubmitMedicineDetails()}
             title="Submit"
-            color="#841584"
+            color="#10847e"
           />
         </View>
         <Button
           title={
             "See Donated medicines"
           }
+          color="#10847e"
           onPress={() =>
             this.props.navigation.push("MedicineList")
           }

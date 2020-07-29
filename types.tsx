@@ -9,7 +9,7 @@ export type BottomTabParamList = {
 };
 
 export type DonorTab = {
-  TabTwoScreen: undefined;
+  AddMedicine: undefined;
   MedicineList: undefined;
 };
 
