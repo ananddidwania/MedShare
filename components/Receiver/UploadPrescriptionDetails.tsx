@@ -7,11 +7,12 @@ import {
   Button,
   TouchableOpacity,
   TextInput,
+  ScrollView,
 } from "react-native";
 import * as DocumentPicker from "expo-document-picker";
+import MedicinesList from "./MedicinesList";
 
 export default function UploadPrescriptionDetails(props: any) {
- 
   const [prescription, setPrescription] = useState("");
   const [medicine, setMedicineName] = useState("");
 
@@ -37,47 +38,39 @@ export default function UploadPrescriptionDetails(props: any) {
     return <Text style={{ fontSize: 19 }}> {text} </Text>;
   };
 
-  const addTextBox = () => {};
-  return (
-    <View>
-      <TouchableOpacity
-        activeOpacity={0.5}
-        style={styles.attachButtonStyle}
-        onPress={selectOneFile()}
-      >
-        {testInAttachmentBox()}
-        <Image
-          source={{
-            uri: "https://img.icons8.com/offices/40/000000/attach.png",
-          }}
-          style={styles.imageIconStyle}
-        />
-      </TouchableOpacity>
-      <Text style={{ fontSize: 19, marginLeft: 10 }}>
-        Add required medicines
-      </Text>
+  const addTextBox = () => {
+    return (
       <TextInput
         style={styles.textInputStyle}
         onChangeText={(medicineName) => setMedicineName(medicineName)}
         value={medicine}
       />
-      <TouchableOpacity
-        activeOpacity={0.5}
-        style={styles.addButtonStyle}
-        onPress={addTextBox}
-      >
-        <Image
-          source={{
-            uri: "https://img.icons8.com/offices/40/000000/attach.png",
-          }}
-          style={styles.imageIconStyle}
-        />
-      </TouchableOpacity>
+    );
+  };
+  return (
+    <ScrollView>
+      <View>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          style={styles.attachButtonStyle}
+          onPress={selectOneFile()}
+        >
+          {testInAttachmentBox()}
+          <Image
+            source={{
+              uri: "https://img.icons8.com/offices/40/000000/attach.png",
+            }}
+            style={styles.imageIconStyle}
+          />
+        </TouchableOpacity>
+        <Text style={{ fontSize: 19, marginLeft: 10 }}>
+          Add required medicines
+        </Text>
+        <MedicinesList />
 
-      <Button title="Submit" onPress={() => {
-         props.navigation.pop()
-      }} />
-    </View>
+        <Button title="Submit" onPress={() => {}} />
+      </View>
+    </ScrollView>
   );
 }
 
