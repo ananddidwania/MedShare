@@ -3,32 +3,34 @@ import { Alert, View, Button, StyleSheet, Text } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Header from "../Header";
 import { firebaseApp } from "../../config";
-import MedicineList from "./MedicineList";
-import Navigation from "../../navigation";
 
 export default class AddNewMedicine extends React.Component {
   state = {
     medicineName: "",
     expiryDate: "",
-    count: 0,
+    count: "",
   };
 
-  SubmitMedicineDetails = (
-    medicineName: string,
-    expiryDate: string,
-    count: number
-  ) => {
+  SubmitMedicineDetails = () => {
     firebaseApp
       .database()
       .ref("Medicines/")
       .push({
-        medicineName,
-        expiryDate,
-        count,
+        medicineName: this.state.medicineName,
+        expiryDate: this.state.expiryDate,
+        count: this.state.count,
       })
       .then(() => {
         //success callback
         console.log("Successfully entered in database");
+        this.setState({
+          medicineName: "",
+          expiryDate: "",
+          count: "",
+        });
+        Alert.alert(
+          "Your medicine got visibility to receivers. Thanks for the donation."
+        );
       })
       .catch((error) => {
         //error callback
@@ -44,26 +46,23 @@ export default class AddNewMedicine extends React.Component {
           style={styles.inputBox}
           placeholder="Name of medicine"
           onChangeText={(medicineName) => this.setState({ medicineName })}
+          value={this.state.medicineName}
         ></TextInput>
         <TextInput
           style={styles.inputBox}
           placeholder="Expiry date"
           onChangeText={(expiryDate) => this.setState({ expiryDate })}
+          value={this.state.expiryDate}
         ></TextInput>
         <TextInput
           style={styles.inputBox}
           placeholder="Number of pills"
           onChangeText={(count) => this.setState({ count })}
+          value={this.state.count.toString()}
         ></TextInput>
         <View style={styles.submitButton}>
           <Button
-            onPress={() =>
-              this.SubmitMedicineDetails(
-                this.state.medicineName,
-                this.state.expiryDate,
-                this.state.count
-              )
-            }
+            onPress={() => this.SubmitMedicineDetails()}
             title="Submit"
             color="#841584"
           />

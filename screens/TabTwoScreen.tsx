@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Button } from "react-native";
+import { ScrollView, StyleSheet, Button } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
@@ -12,9 +12,9 @@ export default class TabTwoScreen extends React.Component {
   };
   render() {
     return (
-      <View>
+      <ScrollView style={{ backgroundColor: "white" }}>
         {!this.state.listVisible ? <AddNewMedicine /> : null}
-        <View style={styles.bottomButton}>
+        <View style={!this.state.listVisible ? styles.bottomButton : {}}>
           <Button
             title={
               this.state.listVisible
@@ -27,13 +27,13 @@ export default class TabTwoScreen extends React.Component {
           />
         </View>
         {this.state.listVisible ? <MedicineList /> : null}
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   bottomButton: {
-    marginTop: 70,
+    marginTop: 55,
   },
 });
