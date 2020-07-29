@@ -1,5 +1,12 @@
 import * as React from "react";
-import { Alert, View, Button, StyleSheet, Text } from "react-native";
+import {
+  Alert,
+  View,
+  Button,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Header from "../Header";
 import { firebaseApp } from "../../config";
@@ -36,7 +43,7 @@ export default class AddNewMedicine extends React.Component<any> {
             count: "",
           });
           Alert.alert(
-            "Your medicine got added to list. \nPlease go to Donated list to view."
+            "Your medicine got added to list. \nPlease go to View Medicines to see the list."
           );
         })
         .catch((error) => {
@@ -51,17 +58,32 @@ export default class AddNewMedicine extends React.Component<any> {
       <View style={styles.container}>
         <View
           style={{
-            width: "40%",
-            flex: 1,
-            alignSelf: "flex-end",
+            width: "45%",
             marginTop: 10,
-            marginBottom: 40,
+            marginBottom: 50,
+            alignSelf: "flex-end",
           }}
         >
-          <Button
-            title={"See Donated medicines"}
+          <TouchableOpacity
+            style={{ paddingVertical: 2 }}
             onPress={() => this.props.navigation.push("MedicineList")}
-          />
+          >
+            <Text
+              style={{
+                fontSize: 16,
+                backgroundColor: "blank",
+                color: "black",
+                fontWeight: "500",
+                borderRadius: 4,
+                paddingVertical: 4,
+                paddingHorizontal: 10,
+                borderStyle: "solid",
+                borderWidth: 1,
+              }}
+            >
+              {"View Medicines"}
+            </Text>
+          </TouchableOpacity>
         </View>
         <TextInput
           style={styles.inputBox}
