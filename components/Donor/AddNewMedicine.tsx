@@ -12,44 +12,56 @@ export default class AddNewMedicine extends React.Component<any> {
   };
 
   SubmitMedicineDetails = () => {
-    firebaseApp
-      .database()
-      .ref("Medicines/")
-      .push({
-        medicineName: this.state.medicineName,
-        expiryDate: this.state.expiryDate,
-        count: this.state.count,
-      })
-      .then(() => {
-        //success callback
-        console.log("Successfully entered in database");
-        this.setState({
-          medicineName: "",
-          expiryDate: "",
-          count: "",
+    if (
+      this.state.medicineName === "" ||
+      this.state.expiryDate === "" ||
+      this.state.count === ""
+    ) {
+      Alert.alert("Please enter valid details!");
+    } else {
+      firebaseApp
+        .database()
+        .ref("Medicines/")
+        .push({
+          medicineName: this.state.medicineName,
+          expiryDate: this.state.expiryDate,
+          count: this.state.count,
+        })
+        .then(() => {
+          //success callback
+          console.log("Successfully entered in database");
+          this.setState({
+            medicineName: "",
+            expiryDate: "",
+            count: "",
+          });
+          Alert.alert(
+            "Your medicine got added to list. \nPlease go to Donated list to view."
+          );
+        })
+        .catch((error) => {
+          //error callback
+          console.log("Error: ", error);
         });
-        Alert.alert(
-          "Your medicine got visibility to receivers. Thanks for the donation."
-        );
-      })
-      .catch((error) => {
-        //error callback
-        console.log("Error: ", error);
-      });
+    }
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <View style={{width:"40%", flex:1, alignSelf:"flex-end", marginTop: 10, marginBottom:40}}>
-        <Button
-          title={
-            "See Donated medicines"
-          }
-          onPress={() =>
-            this.props.navigation.push("MedicineList")
-          }
-        />
+        <View
+          style={{
+            width: "40%",
+            flex: 1,
+            alignSelf: "flex-end",
+            marginTop: 10,
+            marginBottom: 40,
+          }}
+        >
+          <Button
+            title={"See Donated medicines"}
+            onPress={() => this.props.navigation.push("MedicineList")}
+          />
         </View>
         <TextInput
           style={styles.inputBox}
@@ -76,7 +88,6 @@ export default class AddNewMedicine extends React.Component<any> {
             color="#10847e"
           />
         </View>
-
       </View>
     );
   }
