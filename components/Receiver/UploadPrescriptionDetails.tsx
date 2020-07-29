@@ -30,12 +30,20 @@ export default function UploadPrescriptionDetails(props: any) {
     };
   };
 
-  const testInAttachmentBox = () => {
+  const textInAttachmentBox = () => {
     const text =
-      prescription == ""
-        ? "Click here to pick attach prescription"
-        : "See prescription";
-    return <Text style={{ fontSize: 19 }}> {text} </Text>;
+      prescription == "" ? "Upload Prescription" : "View Prescription";
+    return (
+      <Text
+        style={{
+          fontSize: 15,
+          flex: 1,
+          fontWeight: "bold",
+        }}
+      >
+        {text}
+      </Text>
+    );
   };
 
   const addTextBox = () => {
@@ -55,20 +63,44 @@ export default function UploadPrescriptionDetails(props: any) {
           style={styles.attachButtonStyle}
           onPress={selectOneFile()}
         >
-          {testInAttachmentBox()}
+          {textInAttachmentBox()}
           <Image
             source={{
-              uri: "https://img.icons8.com/offices/40/000000/attach.png",
+              uri:
+                "https://www.searchpng.com/wp-content/uploads/2019/03/Upload-Icon-PNG-Image-1024x1024.png",
             }}
             style={styles.imageIconStyle}
           />
         </TouchableOpacity>
-        <Text style={{ fontSize: 19, marginLeft: 10 }}>
+        <Text style={{ fontSize: 19, marginLeft: 23 }}>
           Add required medicines
         </Text>
         <MedicinesList />
-
-        <Button title="Submit" onPress={() => {}} />
+        <View
+          style={{
+            borderRadius: 30,
+            overflow: "hidden",
+            marginHorizontal: 50,
+          }}
+        >
+          <TouchableOpacity
+            onPress={() => props.navigation.push("SearchMedicine")}
+          >
+            <Text
+              style={{
+                fontSize: 15,
+                backgroundColor: "#10847e",
+                color: "white",
+                fontWeight: "500",
+                borderRadius: 4,
+                padding: 10,
+                textAlign: "center",
+              }}
+            >
+              {"Submit"}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );
@@ -96,14 +128,15 @@ const styles = StyleSheet.create({
     color: "black",
   },
   attachButtonStyle: {
-    marginTop: 100,
-    width: "50%",
-    marginLeft: 10,
+    marginTop: 50,
+    width: "42%",
+    marginLeft: 20,
     alignItems: "center",
     flexDirection: "row",
     backgroundColor: "#DDDDDD",
     padding: 5,
-    marginBottom: 20,
+    marginBottom: 40,
+    borderRadius: 4,
   },
   addButtonStyle: {
     marginLeft: 10,
@@ -112,6 +145,7 @@ const styles = StyleSheet.create({
   imageIconStyle: {
     height: 20,
     width: 20,
-    resizeMode: "stretch",
+    resizeMode: "cover",
+    alignSelf: "flex-end",
   },
 });

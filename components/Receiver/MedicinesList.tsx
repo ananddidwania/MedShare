@@ -14,15 +14,31 @@ export default function MedicinesList() {
   const [enteredMedicine, setEnteredMedicine] = useState("");
   const [medicinesList, setMedicinesList] = useState([]);
 
-  const medicineInputHandler = (enteredText) => {
+  const medicineInputHandler = (enteredText: string) => {
     setEnteredMedicine(enteredText);
   };
 
   const addMedicineHandler = () => {
-    setMedicinesList((currentMedicines) => [
+    setMedicinesList((currentMedicines: string[]) => [
       ...currentMedicines,
       enteredMedicine,
     ]);
+  };
+
+  const headingForMedicineList = () => {
+    const text = medicinesList.length > 0 ? "Medicine List" : "";
+    return (
+      <Text
+        style={{
+          marginTop: 20,
+          marginBottom: 10,
+          fontWeight: "bold",
+          fontSize: 18,
+        }}
+      >
+        {text}
+      </Text>
+    );
   };
 
   return (
@@ -31,7 +47,7 @@ export default function MedicinesList() {
         <View style={styles.inputContainer}>
           <TextInput
             placeholder="Enter required mdeicine"
-            style={StyleSheet.input}
+            style={styles.input}
             onChangeText={medicineInputHandler}
             value={enteredMedicine}
           />
@@ -41,11 +57,15 @@ export default function MedicinesList() {
             onPress={addMedicineHandler}
           >
             <Image
-              source={require("../../assets/images/plus_icon.png")}
+              source={{
+                uri:
+                  "https://th.bing.com/th/id/OIP.8Ot1ginA5dU7UuspDk4OCAHaHa?w=187&h=187&c=7&o=5&dpr=1.5&pid=1.7",
+              }}
               style={styles.imageIconStyle}
             />
           </TouchableOpacity>
         </View>
+        {headingForMedicineList()}
         <View>
           {medicinesList.map((medicine) => (
             <Text key={medicine} style={styles.listItem}>
@@ -60,7 +80,10 @@ export default function MedicinesList() {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 50,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 20,
+    paddingBottom: 50,
   },
   inputContainer: {
     flexDirection: "row",
@@ -68,25 +91,27 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   input: {
-    width: "80%",
+    width: "90%",
     borderColor: "black",
     borderWidth: 1,
     padding: 10,
+    borderRadius: 4,
   },
   addButtonStyle: {
     marginLeft: 10,
     marginBottom: 10,
   },
   imageIconStyle: {
-    height: 20,
-    width: 20,
+    height: 35,
+    width: 35,
     resizeMode: "stretch",
+    borderRadius: 40,
   },
   listItem: {
-    padding: 10,
-    margin: 10,
-    backgroundColor: "#ccc",
-    borderColor: "black",
+    fontSize: 15,
+    paddingLeft: 5,
+    paddingTop: 10,
     borderWidth: 1,
+    borderBottomColor: "grey",
   },
 });

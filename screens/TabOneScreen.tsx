@@ -11,22 +11,7 @@ export default function TabOneScreen() {
 
   return (
     <View>
-      {!prescriptionUploaded ? <SearchMedicine /> : null}
-      <View style={styles.bottomButton}>
-        <Button
-          title={
-            !prescriptionUploaded ? "Add Prescription" : "Search Medicines"
-          }
-          onPress={() => setPrescriptionUploaded(!prescriptionUploaded)}
-        />
-      </View>
-      {prescriptionUploaded ? <UploadPrescriptionDetails /> : null}
+      <SearchMedicine />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  bottomButton: {
-    marginTop: 70,
-  },
-});
