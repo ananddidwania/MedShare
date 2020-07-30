@@ -45,7 +45,7 @@ export default class AddNewMedicine extends React.Component<any> {
             count: "",
           });
           Alert.alert(
-            "Your medicine got added to list. \nPlease go to View Medicines to see the list."
+            "Medicine successfully added!. \nClick 'View Medicine' to see the list."
           );
         })
         .catch((error) => {
