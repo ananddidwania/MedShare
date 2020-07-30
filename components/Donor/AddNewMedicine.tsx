@@ -6,10 +6,12 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Header from "../Header";
 import { firebaseApp } from "../../config";
+import { withTheme } from "react-native-elements";
 
 export default class AddNewMedicine extends React.Component<any> {
   state = {
@@ -58,25 +60,24 @@ export default class AddNewMedicine extends React.Component<any> {
       <View style={styles.container}>
         <View
           style={{
-            width: "45%",
+            width: "36%",
             marginTop: 10,
-            marginBottom: 50,
+            marginBottom: 100,
             alignSelf: "flex-end",
           }}
         >
           <TouchableOpacity
-            style={{ paddingVertical: 2 }}
             onPress={() => this.props.navigation.push("MedicineList")}
           >
             <Text
               style={{
-                fontSize: 16,
+                fontSize: 15,
                 backgroundColor: "blank",
                 color: "black",
                 fontWeight: "500",
                 borderRadius: 4,
+                paddingHorizontal: 11,
                 paddingVertical: 4,
-                paddingHorizontal: 10,
                 borderStyle: "solid",
                 borderWidth: 1,
               }}
@@ -87,19 +88,19 @@ export default class AddNewMedicine extends React.Component<any> {
         </View>
         <TextInput
           style={styles.inputBox}
-          placeholder="Name of medicine"
+          placeholder="Medicine Name"
           onChangeText={(medicineName) => this.setState({ medicineName })}
           value={this.state.medicineName}
         ></TextInput>
         <TextInput
           style={styles.inputBox}
-          placeholder="Expiry date"
+          placeholder="Expiry Date (DD/MM/YYYY)"
           onChangeText={(expiryDate) => this.setState({ expiryDate })}
           value={this.state.expiryDate}
         ></TextInput>
         <TextInput
           style={styles.inputBox}
-          placeholder="Number of pills"
+          placeholder="Pills Quantity"
           onChangeText={(count) => this.setState({ count })}
           value={this.state.count.toString()}
         ></TextInput>
@@ -117,16 +118,22 @@ export default class AddNewMedicine extends React.Component<any> {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 50,
+    marginHorizontal: 10,
   },
   inputBox: {
     paddingVertical: 10,
+    paddingLeft: 10,
+    backgroundColor: "white",
     marginVertical: 10,
+    marginHorizontal: 40,
     borderStyle: "solid",
     borderWidth: 1,
+    borderColor: "gray",
     borderRadius: 5,
   },
   submitButton: {
     marginVertical: 50,
+    marginHorizontal: 40,
+    borderRadius: 10,
   },
 });

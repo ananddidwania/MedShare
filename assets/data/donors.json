@@ -1,87 +1,147 @@
 [
-    {
-        "UserId": 1,
-        "UserName": "Kratika",
-        "ProfileImage": "",
-        "Location": {
-            "Long": 12.2,
-            "Lat": 77.2,
-            "Dist":5,
-            "Area":"Bellandur, Bangalore"
-        },
-        "IsVerified": true,
-        "ContactNumber": "+91-9591390308",
-        "MedicineList": [
-            {
-                "MedicineName": "Paracetamol",
-                "Count": 20,
-                "ExpiryDate": "30/08/2020"
-            }
-        ]
+  {
+    "UserId": 1,
+    "UserName": "Kratika",
+    "ProfileImage": "",
+    "Location": {
+      "Long": 12.2,
+      "Lat": 77.2,
+      "Dist": 5,
+      "Area": "Bellandur, Bangalore"
     },
-    {
-        "UserId": 2,
-        "UserName": "Ishan",
-        "ProfileImage": "",
-        "Location": {
-            "Long": 12.2,
-            "Lat": 78.2,
-            "Dist":0.6,
-            "Area":"Sarjapur, Bangalore"
-        },
-        "IsVerified": false,
-        "ContactNumber": "+91-8447559779",
-        "MedicineList": [
-            {
-                "MedicineName": "Crocin",
-                "Count": 12,
-                "ExpiryDate": "12/12/2020"
-            },
-            {
-                "MedicineName": "Glucon D",
-                "Count": 12,
-                "ExpiryDate": "12/12/2020"
-            }
-        ]
+    "IsVerified": true,
+    "ContactNumber": "+91-9591390308",
+    "MedicineList": [
+      {
+        "MedicineName": "Crocin, Paracetamol",
+        "Count": 20,
+        "ExpiryDate": "30/08/2020"
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "UserName": "Ishan",
+    "ProfileImage": "",
+    "Location": {
+      "Long": 12.2,
+      "Lat": 78.2,
+      "Dist": 0.6,
+      "Area": "Sarjapur, Bangalore"
     },
-    {
-        "UserId": 3,
-        "UserName": "Chetan",
-        "ProfileImage": "https://reactnative.dev/img/tiny_logo.png",
-        "Location": {
-            "Long": 13.2,
-            "Lat": 79.2,
-            "Dist": 1,
-            "Area":"Indranagar, Bangalore"
-        },
-        "IsVerified": true,
-        "ContactNumber": "+91-9650939314",
-        "MedicineList": [
-            {
-                "MedicineName": "Eno",
-                "Count": 5,
-                "ExpiryDate": "12/08/2020"
-            }
-        ]
+    "IsVerified": false,
+    "ContactNumber": "+91-8447559779",
+    "MedicineList": [
+      {
+        "MedicineName": "Crocin",
+        "Count": 12,
+        "ExpiryDate": "12/12/2020"
+      },
+      {
+        "MedicineName": "Glucon D",
+        "Count": 12,
+        "ExpiryDate": "12/12/2020"
+      }
+    ]
+  },
+  {
+    "UserId": 3,
+    "UserName": "Chetan",
+    "ProfileImage": "https://reactnative.dev/img/tiny_logo.png",
+    "Location": {
+      "Long": 13.2,
+      "Lat": 79.2,
+      "Dist": 1,
+      "Area": "Indranagar, Bangalore"
     },
-    {
-        "UserId": 4,
-        "UserName": "Anand",
-        "ProfileImage": "https://reactnative.dev/img/tiny_logo.png",
-        "Location": {
-            "Long": 13.2,
-            "Lat": 79.2,
-            "Dist": 1,
-            "Area":"Marathalli, Bangalore"
-        },
-        "IsVerified": true,
-        "ContactNumber": "+91-9650939314",
-        "MedicineList": [
-            {
-                "MedicineName": "Eno",
-                "Count": 5,
-                "ExpiryDate": "12/08/2020"
-            }
-        ]
-    }
+    "IsVerified": true,
+    "ContactNumber": "+91-9650939314",
+    "MedicineList": [
+      {
+        "MedicineName": "Crocin, Eno",
+        "Count": 5,
+        "ExpiryDate": "12/08/2020"
+      }
+    ]
+  },
+  {
+    "UserId": 4,
+    "UserName": "Anand",
+    "ProfileImage": "https://reactnative.dev/img/tiny_logo.png",
+    "Location": {
+      "Long": 13.2,
+      "Lat": 79.2,
+      "Dist": 1,
+      "Area": "Marathalli, Bangalore"
+    },
+    "IsVerified": true,
+    "ContactNumber": "+91-9650939314",
+    "MedicineList": [
+      {
+        "MedicineName": "Crocin, Eno",
+        "Count": 5,
+        "ExpiryDate": "12/08/2020"
+      }
+    ]
+  },
+  {
+    "UserId": 5,
+    "UserName": "Atishay",
+    "ProfileImage": "",
+    "Location": {
+      "Long": 14.2,
+      "Lat": 70.2,
+      "Dist": 6,
+      "Area": "Sarjapura, Bangalore"
+    },
+    "IsVerified": false,
+    "ContactNumber": "+91-9591390308",
+    "MedicineList": [
+      {
+        "MedicineName": "Crocin, Citrazen",
+        "Count": 50,
+        "ExpiryDate": "30/08/2023"
+      }
+    ]
+  },
+  {
+    "UserId": 6,
+    "UserName": "Kirti",
+    "ProfileImage": "",
+    "Location": {
+      "Long": 12.2,
+      "Lat": 77.2,
+      "Dist": 2.8,
+      "Area": "J.P.Nagar, Bangalore"
+    },
+    "IsVerified": true,
+    "ContactNumber": "+91-9591390308",
+    "MedicineList": [
+      {
+        "MedicineName": "Crocin, Paracetamol",
+        "Count": 24,
+        "ExpiryDate": "20/08/2020"
+      }
+    ]
+  },
+  {
+    "UserId": 7,
+    "UserName": "Ramya",
+    "ProfileImage": "",
+    "Location": {
+      "Long": 12.2,
+      "Lat": 77.2,
+      "Dist": 20,
+      "Area": "Indiranagar, Bangalore"
+    },
+    "IsVerified": true,
+    "ContactNumber": "+91-9591390308",
+    "MedicineList": [
+      {
+        "MedicineName": "Paracetamol, Crocin",
+        "Count": 22,
+        "ExpiryDate": "30/08/2030"
+      }
+    ]
+  }
 ]

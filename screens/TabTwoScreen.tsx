@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ScrollView, StyleSheet, Button } from "react-native";
+import { ScrollView, StyleSheet, Button, Image } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";

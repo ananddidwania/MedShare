@@ -7,27 +7,63 @@ export default function SearchMedicine(props: any) {
   const [searchText, setSearchText] = useState("");
 
   return (
-    <View style={{ justifyContent: "center", alignItems: "center", height: "100%" }}>
-
-      <Text style={{ color: "#10847e", position: "absolute", top: 0, right: 0, padding: 10, textDecorationLine: "underline" }} onPress={() => {
-        props.navigation.push("UploadPrescriptionDetails")
-      }} >Upload Prescription</Text>
+    <View
+      style={{ justifyContent: "center", alignItems: "center", height: "100%" }}
+    >
+      <Text
+        style={{
+          color: "#10847e",
+          position: "absolute",
+          top: 0,
+          right: 0,
+          padding: 10,
+          textDecorationLine: "underline",
+        }}
+        onPress={() => {
+          props.navigation.push("UploadPrescriptionDetails");
+        }}
+      >
+        Upload Prescription
+      </Text>
       <SearchBar
         inputStyle={{ ...styles.backgroundWhite, color: "black" }}
         inputContainerStyle={{ borderRadius: 30, backgroundColor: "white" }}
-        containerStyle={{ ...styles.backgroundWhite, width: "95%", borderRadius: 30 }}
-        leftIconContainerStyle={styles.backgroundWhite}
+        containerStyle={{
+          ...styles.backgroundWhite,
+          width: "95%",
+          borderRadius: 30,
+          elevation: 5,
+        }}
         placeholder="Type Here..."
         onChangeText={(searchText) => setSearchText(searchText)}
         value={searchText}
         lightTheme={true}
+        searchIcon={false}
       />
-      <View style={{ padding: 10, width: "50%", borderRadius: 30, overflow: "hidden" }}>
-
+      <View
+        style={{
+          padding: 10,
+          width: "50%",
+          borderRadius: 30,
+          overflow: "hidden",
+          marginTop: 30,
+        }}
+      >
         <TouchableOpacity onPress={() => props.navigation.push("DonorsList")}>
-          <Text style={{ fontSize:15, backgroundColor: "#10847e", color: "white", fontWeight: "500", borderRadius: 4, padding:10, textAlign:"center" }}>{"Search"}</Text>
+          <Text
+            style={{
+              fontSize: 15,
+              backgroundColor: "#10847e",
+              color: "white",
+              fontWeight: "500",
+              borderRadius: 4,
+              padding: 10,
+              textAlign: "center",
+            }}
+          >
+            {"Search"}
+          </Text>
         </TouchableOpacity>
-
       </View>
     </View>
   );

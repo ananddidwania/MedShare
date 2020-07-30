@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
+  Alert,
 } from "react-native";
 import * as DocumentPicker from "expo-document-picker";
 import MedicinesList from "./MedicinesList";
@@ -84,7 +85,10 @@ export default function UploadPrescriptionDetails(props: any) {
           }}
         >
           <TouchableOpacity
-            onPress={() => props.navigation.push("SearchMedicine")}
+            onPress={() => {
+              Alert.alert("Prescription uploaded successfully!");
+              props.navigation.push("SearchMedicine");
+            }}
           >
             <Text
               style={{
@@ -92,7 +96,7 @@ export default function UploadPrescriptionDetails(props: any) {
                 backgroundColor: "#10847e",
                 color: "white",
                 fontWeight: "500",
-                borderRadius: 4,
+                borderRadius: 5,
                 padding: 10,
                 textAlign: "center",
               }}
@@ -115,6 +119,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginLeft: 10,
     width: "70%",
+    backgroundColor: "white",
   },
   containerStyle: {
     flex: 1,
@@ -129,7 +134,7 @@ const styles = StyleSheet.create({
   },
   attachButtonStyle: {
     marginTop: 50,
-    width: "42%",
+    width: "44%",
     marginLeft: 20,
     alignItems: "center",
     flexDirection: "row",

@@ -12,17 +12,17 @@ import {
 
 export default function MedicinesList() {
   const [enteredMedicine, setEnteredMedicine] = useState("");
-  const [medicinesList, setMedicinesList] = useState([]);
+  const [medicinesList, setMedicinesList] = useState<string[]>([]);
 
   const medicineInputHandler = (enteredText: string) => {
     setEnteredMedicine(enteredText);
   };
 
   const addMedicineHandler = () => {
-    setMedicinesList((currentMedicines: string[]) => [
-      ...currentMedicines,
-      enteredMedicine,
-    ]);
+    setMedicinesList(
+      (currentMedicines: string[]) =>
+        [...currentMedicines, enteredMedicine] as string[]
+    );
   };
 
   const headingForMedicineList = () => {
@@ -46,7 +46,7 @@ export default function MedicinesList() {
       <View style={styles.screen}>
         <View style={styles.inputContainer}>
           <TextInput
-            placeholder="Enter required mdeicine"
+            placeholder="Enter required medicine"
             style={styles.input}
             onChangeText={medicineInputHandler}
             value={enteredMedicine}
@@ -92,14 +92,16 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "90%",
-    borderColor: "black",
+    borderColor: "gray",
     borderWidth: 1,
     padding: 10,
     borderRadius: 4,
+    backgroundColor: "white",
   },
   addButtonStyle: {
     marginLeft: 10,
     marginBottom: 10,
+    marginTop: 10,
   },
   imageIconStyle: {
     height: 35,
@@ -109,9 +111,9 @@ const styles = StyleSheet.create({
   },
   listItem: {
     fontSize: 15,
-    paddingLeft: 5,
-    paddingTop: 10,
+    paddingLeft: 10,
     borderWidth: 1,
+    paddingVertical: 5,
     borderBottomColor: "grey",
   },
 });
